@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TOC passwordRegex</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #DCEEFB; /* Light blue background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        form {
+            background-color: #B0C4DE; /* Light blue-grey */
+            padding: 40px;
+            border-radius: 15px;
+            width: 400px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #87CEFA; /* SkyBlue border */
+            border-radius: 7px;
+            background-color: #F0F8FF; /* AliceBlue background */
+            color: #333;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1E90FF; /* DodgerBlue */
+            border: none;
+            border-radius: 7px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4169E1; /* RoyalBlue hover color */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function validateForm() {
+            // Validate Username
+            var usernameRegex = /^[a-zA-Z]{3,30}$/;
+            if (!usernameRegex.test(document.getElementById("username").value)) {
+                alert("Please enter a valid username.");
+                return false;
+}
+
+            // Validate Email
+            var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (!emailRegex.test(document.getElementById("email").value)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Validate Password
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+            if (!passwordRegex.test(document.getElementById("password").value)) {
+                alert("Password should have at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long.");
+                return false;;
+            }
+
+            // Check passwords match
+            if (document.getElementById("password").value !== document.getElementById("confirmPassword").value) {
+                alert("Passwords don't match.");
+                return false;
+            }
+
+            // Validate Contact Number - 10 digit format
+            var contactRegex = /^\d{10}$/;
+            if (!contactRegex.test(document.getElementById("contact").value)) {
+                alert("Please enter a valid 10-digit contact number.");
+                return false;
+            }
+
+            alert("Successful");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+    <form onsubmit="return validateForm();">
+        <h2>Sign Up</h2>
+        <input type="text" id="username" placeholder="Username" maxlength="50">
+        <input type="text" id="firstname" placeholder="First Name" maxlength="50">
+        <input type="text" id="lastname" placeholder="Last Name" maxlength="50">
+        <input type="email" id="email" placeholder="username@example.com">
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+        <input type="text" id="contact" placeholder="Contact" maxlength="10">
+        <button type="submit">Register</button>
+    </form>
+</body>
+
+</html>
+
+<!--/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/-->

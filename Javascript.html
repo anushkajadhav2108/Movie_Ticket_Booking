@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <script src="jvscrpt1.js"></script>
+    
+
+</head>
+
+<body>
+
+    <p id="p2"></p>
+
+    <script>
+        
+       const student={rno:51,name:"Anushka",div:"A",branch:"Comp",school:"SCE"};
+       document.getElementById("p2").innerHTML = student.rno;
+       document.getElementById("p2").innerHTML = student.school;
+
+
+    </script>
+    <br><br><br>
+    <button type="button" onclick='window.print()'>Print</button>
+    
+
+<img id="i1" src="mypic.jpeg" height="200px" width="200px"> <br>
+<button type="button" onclick='document.getElementById("i1").style.display="block"'>show image</button>
+<button type="button" onclick='document.getElementById("i1").style.display="none"'>hide image</button>
+<br>
+<h1 id="head1">Display current time & date</h1><br>   
+<button type="button" onclick='Myfunction()'>Click to get date and time guyssss</button><br>
+<h1 id="head"></h1>
+<script>
+    
+    const x=5;
+    const y=6;
+    const z=2**3;
+    
+    var headElement = document.getElementById("head");
+    
+    headElement.textContent="The value of z is"+z;
+    num=[1,2,3,4];
+    document.write(num);
+    document.write(num[0]);
+    
+    num[2]=10;
+    document.write(num[2]);
+    </script>
+
+   <br><br><br> 
+   <button type="button" onclick='window.print()'>Print</button>
+   <br>
+   
+</body>
+</html>
